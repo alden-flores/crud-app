@@ -31,7 +31,7 @@
             <td> 
                 <a href="{{url('city/'.$city->id.'/view')}}">View</a>
                 <a href="{{url('city/'.$city->id.'/edit')}}">Edit</a>
-                <a href="">Delete</a>
+                <a href="{{url('city/'.$city->id.'/delete')}}">Delete</a>
             </td>
             </tr>
             @endforeach

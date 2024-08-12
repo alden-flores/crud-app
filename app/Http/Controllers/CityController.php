@@ -52,4 +52,10 @@ class CityController extends Controller
         $city = city::findOrFail($id);
         return view('cityview', compact('city'));
     }
+
+    public function delete(int $id){
+        $city = city::findOrFail($id);
+        $city->delete();
+        return redirect('/city');
+    }
 }
