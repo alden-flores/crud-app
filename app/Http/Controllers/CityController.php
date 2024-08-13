@@ -50,6 +50,7 @@ class CityController extends Controller
     }
 
     public function view(int $id){
+        //In hindsight I don't think I needed to make another view for this
         $city = city::findOrFail($id);
         return view('cityview', compact('city'));
     }

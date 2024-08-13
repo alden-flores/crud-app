@@ -31,9 +31,9 @@
                 <td>{{$barangay->name}}</td>
                 <td>{{$barangay->cityName->name}}</td>
             <td> 
-                <a href="{{url('city/'.$barangay->id.'/view')}}">View</a>
-                <a href="{{url('city/'.$barangay->id.'/edit')}}">Edit</a>
-                <a href="{{url('city/'.$barangay->id.'/delete')}}">Delete</a>
+                <a href="{{url('barangay/'.$barangay->id.'/view')}}">View</a>
+                <a href="{{url('barangay/'.$barangay->id.'/edit')}}">Edit</a>
+                <a href="{{url('barangay/'.$barangay->id.'/delete')}}">Delete</a>
             </td>
             </tr>
             @endforeach

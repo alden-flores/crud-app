@@ -10,7 +10,7 @@
     <h3>COVID Report List</h3>
     <ul>
         <li><a href="/city">Cities</a></li>
-        <li>Barangay</li>
+        <li><a href="/barangay">Barangay</a></li>
         <li>Patient</li>
     </ul>
 </body>

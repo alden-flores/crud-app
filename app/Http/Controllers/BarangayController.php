@@ -30,4 +30,32 @@ class BarangayController extends Controller
 
         return redirect('barangay');
     }
+
+    public function edit(int $id){
+        $barangay = barangay::findOrFail($id);
+        $cityData = city::get();
+        return view('barangayedit', compact('barangay', 'cityData'));
+    }
+
+    public function update(Request $request, int $id){
+        $request->validate([
+            'name'=>'required',
+            'city_id'=>'required'
+        ]);
+
+        barangay::findOrFail($id)->update([
+            'name'=> $request->name,
+            'city_id'=> $request->city_id
+        ]);
+
+        return redirect('/barangay');
+    }
+
+    public function view(int $id){
+        $barangay = barangay::findOrFail($id);
+
+        echo "Name: ". $barangay->name ."<br>";
+        echo "City: ". $barangay->cityName->name. "<br>";
+        echo "<a href='/barangay'>Back</a>";
+    }
 }

@@ -16,6 +16,7 @@ class barangay extends Model
         'city_id'
     ];
 
+    //This part here basically declares the relation between the City Class and Barangay class
     public function cityName()
     {
         return $this->belongsTo(city::class,'city_id','id');
