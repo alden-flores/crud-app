@@ -46,4 +46,47 @@ class PatientController extends Controller
         $patient = patient::findOrFail($id);
         return view ('patientedit',compact('brgyData','patient'));
     }
+
+    public function update(Request $request, int $id){
+        $request->validate([
+            'name' => 'required',
+            'brgy' => 'required',
+            'number' => 'required',
+            'email' => 'nullable',
+            'caseType' => 'required',
+            'coronavirus' => 'nullable'
+        ]);
+
+        patient::findOrFail($id)->update([
+            'name'=>$request->name,
+            'brgy_id'=>$request->brgy,
+            'email'=>$request->email,
+            'number'=>$request->number,
+            'case_type'=>$request->caseType,
+            'coronavirus_status'=>$request->coronavirus
+        ]);
+
+        return redirect('/patient');
+    }
+
+        public function delete(int $id){
+            $patient = patient::findOrFail($id);
+
+            $patient->delete();
+
+            return redirect('/patient');
+        }
+
+        public function view(int $id){
+          
+                $patient = patient::findOrFail($id);
+        
+                echo "Name: ". $patient->name ."<br>";
+                echo "Brgy:  ". $patient->barangayName->name. "<br>";
+                echo "Number:  ". $patient->number. "<br>";
+                echo "Email:  ". $patient->email. "<br>";
+                echo "Case Type:  ". $patient->case_type. "<br>";
+                echo "<a href='/patient'>Back</a>";
+            
+        }
 }

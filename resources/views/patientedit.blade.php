@@ -10,7 +10,7 @@
 <body>
     <div class="patientform">
     <h2>Insert Patient</h2>
-    <form action="{{url('patient/create')}}" method="post">
+    <form action="{{url('patient/'.$patient->id.'/edit')}}" method="post">
         @csrf
         @method('PUT')
         <label>Name: </label>
