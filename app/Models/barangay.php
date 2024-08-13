@@ -12,12 +12,13 @@ class barangay extends Model
     protected $table = 'barangay';
 
     protected $fillable = [
-        'name'
+        'name',
+        'city_id'
     ];
 
-    public function city(): BelongsTo
+    public function cityName()
     {
-        return $this->belongsTo(city::class);
+        return $this->belongsTo(city::class,'city_id','id');
     }
 
     public $timestamps = false;

@@ -41,6 +41,7 @@ class CityController extends Controller
             'name'=>'required'
         ]);
 
+        //First validate if ID exists, then invoke update function to specific parameters
         city::findOrFail($id)->update([
             'name' => $request->name
         ]);
@@ -54,7 +55,9 @@ class CityController extends Controller
     }
 
     public function delete(int $id){
+        //Find the value being deleted that has matching ID
         $city = city::findOrFail($id);
+        //Invoke delete method to delete entry
         $city->delete();
         return redirect('/city');
     }
