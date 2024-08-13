@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BarangayController;
 use App\Http\Controllers\CityController;
+use App\Http\Controllers\PatientController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -23,3 +24,5 @@ Route::get('/barangay/{id}/edit',[BarangayController::class, 'edit']);
 Route::put('/barangay/{id}/edit', [BarangayController::class, 'update']);
 Route::get('/barangay/{id}/view',[BarangayController::class, 'view']);
 Route::get('/barangay/{id}/delete', [BarangayController::class, 'delete']);
+//PATIENT ROUTES
+Route::get('/patient', [PatientController::class, 'index']);

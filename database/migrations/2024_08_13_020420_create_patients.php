@@ -14,8 +14,11 @@ return new class extends Migration
             $table->string('name');
             $table->foreignId('brgy_id')->references('id')->on('barangay')->cascadeOnDelete();
             $table->string('number');
+            //According to the specs of the exam, the email is not required so I made it so that it is nullable
+            $table->string('email')->nullable();
             $table->string('case_type');
-            $table->string('coronavirus_status');
+            //Considering that the patient may have a negative status, I made the coronavirus_status nullable
+            $table->string('coronavirus_status')->nullable();
         });
     }
 

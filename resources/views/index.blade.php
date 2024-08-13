@@ -11,7 +11,7 @@
     <ul>
         <li><a href="/city">Cities</a></li>
         <li><a href="/barangay">Barangay</a></li>
-        <li>Patient</li>
+        <li><a href="/patient">Patient</a></li>
     </ul>
 </body>
 </html>
