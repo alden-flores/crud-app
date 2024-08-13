@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('barangay', function (Blueprint $table) {
             $table->id()->primary();
             $table->string('name');
-            $table->bigInteger('city_id');
+            $table->foreignId('city_id')->references('id')->on('city')->cascadeOnDelete();
+            
         });
     }
 

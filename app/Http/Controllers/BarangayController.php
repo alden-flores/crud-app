@@ -58,4 +58,10 @@ class BarangayController extends Controller
         echo "City: ". $barangay->cityName->name. "<br>";
         echo "<a href='/barangay'>Back</a>";
     }
+
+    public function delete(int $id){
+        $barangay = barangay::findOrFail($id);
+        $barangay->delete();
+        return redirect('/barangay');
+    }
 }

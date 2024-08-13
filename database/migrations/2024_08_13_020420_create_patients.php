@@ -6,16 +6,16 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public $timestamps = false;
-
     public function up(): void
     {
-        Schema::create('city', function (Blueprint $table) {
-            $table->id()->primary();
+        Schema::create('patients', function (Blueprint $table) {
+            $table->id();
             $table->string('name');
+            $table->foreignId('brgy_id')->references('id')->on('barangay')->cascadeOnDelete();
+            $table->string('number');
+            $table->string('case_type');
+            $table->string('coronavirus_status');
         });
     }
 
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('city');
+        Schema::dropIfExists('patients');
     }
 };
