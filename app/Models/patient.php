@@ -9,9 +9,9 @@ class patient extends Model
 {
     use HasFactory;
     protected $table = 'patients';
-    public $timestamps = 'false';
+    public $timestamps = false;
 
-    protected $filable =[
+    protected $fillable =[
         'name',
         'brgy_id',
         'number',
@@ -19,4 +19,8 @@ class patient extends Model
         'case_type',
         'coronavirus_status'
     ];
+
+    public function barangayName(){
+        return $this->belongsTo(barangay::class,'brgy_id','id');
+    }
 }

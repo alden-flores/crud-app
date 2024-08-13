@@ -26,3 +26,9 @@ Route::get('/barangay/{id}/view',[BarangayController::class, 'view']);
 Route::get('/barangay/{id}/delete', [BarangayController::class, 'delete']);
 //PATIENT ROUTES
 Route::get('/patient', [PatientController::class, 'index']);
+Route::get('/patient/create', [PatientController::class, 'create']);
+Route::post('/patient/create',[PatientController::class, 'store']);
+Route::get('/patient/{id}/edit', [PatientController::class, 'edit']);
+Route::put('/patient/{id}/edit', [PatientController::class, 'update']);
+Route::get('/patient/{id}/view',[PatientController::class, 'view']);
+Route::get('/patient/{id}/delete', [PatientController::class, 'delete']);

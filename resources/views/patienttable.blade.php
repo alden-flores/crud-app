@@ -22,12 +22,29 @@
                 <th>Name</th>
                 <th>Barangay</th>
                 <th>Phone No.</th>
+                <th>Email</th>
                 <th>Case Type</th>
                 <th>Coronavirus Status</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
-    
+            @foreach($patientData as $patient)
+            <tr>
+            <td>{{$patient->id}}</td>
+            <td>{{$patient->name}}</td>
+            <td>{{$patient->barangayName->name}}</td>
+            <td>{{$patient->number}}</td>
+            <td>{{$patient->email}}</td>
+            <td>{{$patient->case_type}}</td>
+            <td>{{$patient->coronavirus_status}}</td>
+            <td>
+                <a href="{{url('patient/'.$patient->id.'/view')}}">View</a>
+                <a href="{{url('patient/'.$patient->id.'/edit')}}">Edit</a>
+                <a href="{{url('patient/'.$patient->id.'/delete')}}">Delete</a>
+            </td>
+           <tr>
+            @endforeach
         </tbody>
     </table>
 </div>
