@@ -31,7 +31,9 @@
 </body>
 <script type="text/javascript">
     $(document).ready(function (){
-
+        //This is similar to what I did for the patient form except
+        //with the usage of ajax in order to dynamically fill the dropdown menu with
+        //the associated barangays of the city
         $(document).on('change','.city',function(){
             
             var city_id=$(this).val();
