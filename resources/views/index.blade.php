@@ -12,8 +12,8 @@
         <li><a href="/city">Cities</a></li>
         <li><a href="/barangay">Barangay</a></li>
         <li><a href="/patient">Patient</a></li>
-        <li>Awareness Report</li>
-        <li>Coronavirus Report</li>
+        <li><a href="/awareness">Awareness Report</a></li>
+        <li><a href="/coronavirus">Coronavirus Report</a></li>
     </ul>
 </body>
 </html>

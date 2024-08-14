@@ -7,11 +7,11 @@
     <title>AWARENESS REPORT</title>
 </head>
 <body>
-<h3>AWARENESS REPORT RESULT</h3>
-<p><strong>PUI: </strong>{{$puiNum}}</p>
-<p><strong>PUM: </strong>{{$pumNum}}</p>
-<p><strong>Negative on COVID: </strong>{{$covNegNum}}</p>
-<p><strong>Positive on COVID: </strong>{{$covPosNum}}</p>
+<h3>CORONAVIRUS REPORT RESULT</h3>
+<p><strong>TOTAL NUMBER OF PEOPLE WITH CORONAVIRUS: </strong>{{$covPosNum}}</p>
+<p><strong>RECOVERED: </strong>{{$covRecoveredNum}}</p>
+<p><strong>ACTIVE: </strong>{{$covActiveNum}}</p>
+<p><strong>DEATH : </strong>{{$covDeathNum}}</p>
 <hr>
 <a href="{{url('/awareness')}}">Back</a>
 </body>

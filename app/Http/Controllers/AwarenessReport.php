@@ -34,6 +34,7 @@ class AwarenessReport extends Controller
         $covPosList = patient::where('brgy_id',$request->brgy)->where('case_type','covidPositive')->get();
         $covNegList = patient::where('brgy_id',$request->brgy)->where('case_type','covidNegative')->get();
         
+        //this grabs the count of people that fulfill the number of listed people with the given fields
         $puiNum = $puiList->count();
         $pumNum = $pumList->count();
         $covPosNum = $covPosList->count();
