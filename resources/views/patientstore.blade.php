@@ -30,7 +30,7 @@
             <option disabled selected>--select case type--</option>
             <option value="PUI">Person Under Investigation</option>
             <option value="PUM">Person Under Monitoring</option>
-            <option value="covidPositive" class="covidPositive">Positive on Covid</option>
+            <option value="covidPositive">Positive on Covid</option>
             <option value="covidNegative">Negative on Covid</option>
             
         </select><br>
@@ -50,9 +50,20 @@
 </body>
 
 <script>
+
+//This jQuery function makes it so that it hides the coronavirus
+//dropdown
 $(document).ready(function (){
+
+    //First we initialize it by hiding the dropdown menu on load
     $(".coronavirus").hide();
+
+    //This part here checks for changes within the case type drop down menu
     $("#caseType").change(function (){
+        //From here it will make a check on the case type drop down menu
+        //and if it detects that the option associated with covidPositive
+        //is selected, it will show the coronavirus type dropdown menu
+        
         if($("#caseType").val() == "covidPositive"){
         $(".coronavirus").show();
     }

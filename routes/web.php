@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AwarenessReport;
 use App\Http\Controllers\BarangayController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\PatientController;
@@ -32,3 +33,8 @@ Route::get('/patient/{id}/edit', [PatientController::class, 'edit']);
 Route::put('/patient/{id}/edit', [PatientController::class, 'update']);
 Route::get('/patient/{id}/view',[PatientController::class, 'view']);
 Route::get('/patient/{id}/delete', [PatientController::class, 'delete']);
+//AWARENESS REPORT
+Route::get('/awareness',[AwarenessReport::class, 'index']);
+Route::post('/awareness/report',[AwarenessReport::class,'genReport']);
+//THIS IS TO GRAB DATA FOR THE DROP DOWN
+Route::get('/getbrgy',[AwarenessReport::class, 'getbrgy']);
